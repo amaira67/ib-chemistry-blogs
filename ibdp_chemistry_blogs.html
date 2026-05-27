@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IBDP Chemistry Blog — Structure 1.1–1.5</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Source Serif 4',Georgia,serif;background:#f8f6f1;color:#1a1a1a;min-height:100vh;}
+  .site-header{background:#0f6e56;padding:2rem 0;margin-bottom:3rem;}
+  .site-header h1{color:#fff;font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;max-width:760px;margin:0 auto;padding:0 2rem;}
+  .site-header p{color:#9fe1cb;font-size:14px;max-width:760px;margin:.5rem auto 0;padding:0 2rem;letter-spacing:.04em;}
+  .blog-nav{max-width:760px;margin:0 auto 2.5rem;padding:0 2rem;display:flex;gap:10px;flex-wrap:wrap;}
+  .nav-btn{padding:9px 20px;border:1.5px solid #0f6e56;border-radius:24px;background:#fff;color:#0f6e56;font-size:14px;cursor:pointer;font-family:'Source Serif 4',serif;transition:all .2s;}
+  .nav-btn.active{background:#0f6e56;color:#fff;}
+  .nav-btn:hover:not(.active){background:#e1f5ee;}
+  .entry{display:none;max-width:760px;margin:0 auto;padding:0 2rem 4rem;}
+  .entry.visible{display:block;}
+  .entry-header{border-left:4px solid #1d9e75;padding-left:1.25rem;margin-bottom:2.5rem;}
+  .tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#085041;background:#e1f5ee;padding:4px 10px;border-radius:4px;margin-bottom:.75rem;font-family:sans-serif;}
+  .entry-title{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;line-height:1.2;color:#1a1a1a;margin-bottom:.6rem;}
+  .entry-meta{font-size:13px;color:#666;font-family:sans-serif;}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin:1.5rem 0;}
+  .chip{font-size:12px;padding:4px 11px;border-radius:12px;background:#fff;border:1px solid #d4d0c8;color:#555;font-family:sans-serif;}
+  h3{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;margin:2.25rem 0 .75rem;color:#0f6e56;}
+  p{font-size:1.05rem;line-height:1.82;margin-bottom:1.2rem;color:#2a2a2a;}
+  strong{font-weight:700;color:#1a1a1a;}
+  em{font-style:italic;}
+  .callout{background:#e1f5ee;border-left:4px solid #1d9e75;border-radius:0 8px 8px 0;padding:1rem 1.25rem;margin:1.5rem 0;}
+  .callout p{margin:0;font-size:.97rem;color:#085041;}
+  .formula-box{background:#fff;border:1px solid #d4d0c8;border-radius:8px;padding:1rem 1.5rem;margin:1.5rem 0;font-family:'Courier New',monospace;font-size:1.1rem;text-align:center;color:#1a1a1a;box-shadow:0 1px 3px rgba(0,0,0,.06);}
+  .formula-label{display:block;font-family:'Source Serif 4',serif;font-size:12px;color:#888;margin-top:.5rem;font-style:italic;}
+  .key-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:1.5rem 0;}
+  .fact-card{background:#fff;border-radius:8px;padding:.85rem 1rem;text-align:center;border:1px solid #d4d0c8;box-shadow:0 1px 2px rgba(0,0,0,.04);}
+  .fact-val{font-size:1.3rem;font-weight:700;color:#1d9e75;font-family:'Playfair Display',serif;}
+  .fact-label{font-size:12px;color:#666;margin-top:5px;font-family:sans-serif;line-height:1.4;}
+  hr{border:none;border-top:1px solid #e0ddd5;margin:2.5rem 0;}
+  .progress-bar{display:flex;align-items:center;gap:8px;max-width:760px;margin:0 auto 2rem;padding:0 2rem;}
+  .progress-bar span{font-size:12px;color:#888;font-family:sans-serif;white-space:nowrap;}
+  .progress-track{flex:1;height:4px;background:#d4d0c8;border-radius:2px;overflow:hidden;}
+  .progress-fill{height:100%;background:#1d9e75;border-radius:2px;transition:width .3s;}
+</style>
+</head>
+<body>
+
+<div class="site-header">
+  <h1>IB DP Chemistry — Structure 1 Blog Series</h1>
+  <p>Topics 1.1 through 1.5 &middot; Five entries &middot; Written for IBDP students using Pearson Chemistry</p>
+</div>
+
+<nav class="blog-nav">
+  <button class="nav-btn active" onclick="show(0)">1 — Particles &amp; Matter</button>
+  <button class="nav-btn" onclick="show(1)">2 — The Nuclear Atom</button>
+  <button class="nav-btn" onclick="show(2)">3 — Electron Configuration</button>
+  <button class="nav-btn" onclick="show(3)">4 — The Mole</button>
+  <button class="nav-btn" onclick="show(4)">5 — Ideal Gases</button>
+</nav>
+
+<div class="progress-bar">
+  <span id="prog-label">Entry 1 of 5</span>
+  <div class="progress-track"><div class="progress-fill" id="prog-fill" style="width:20%"></div></div>
+</div>
+
+<!-- ========== BLOG 1 ========== -->
+<article class="entry visible" id="e0">
+  <header class="entry-header">
+    <span class="tag">Structure 1.1</span>
+    <h1 class="entry-title">Everything is particles — and that changes everything</h1>
+    <p class="entry-meta">IB DP Chemistry &middot; Blog 1 of 5 &middot; approx. 7 min read</p>
+  </header>
+
+  <div class="chips">
+    <span class="chip">Elements, compounds &amp; mixtures</span>
+    <span class="chip">Kinetic molecular theory</span>
+    <span class="chip">Kinetic energy &amp; temperature</span>
+    <span class="chip">States of matter</span>
+  </div>
+
+  <p>If you had to reduce all of chemistry to a single sentence, it might be this: <em>everything around you is made of particles in constant motion, and how those particles are arranged and moving determines everything about what you observe.</em> That is the spine of Structure 1.1, and once you internalise it, the rest of the course starts to feel far less like memorisation and far more like consequence.</p>
+
+  <h3>Pure substances vs. mixtures — the first cut</h3>
+  <p>Chemists begin by sorting matter into categories. An <strong>element</strong> contains only one type of atom — think pure iron or oxygen gas. A <strong>compound</strong> is a chemically bonded combination of two or more elements in fixed proportions: water is always 2:1 hydrogen to oxygen, never 3:1. A <strong>mixture</strong> is physically combined matter with no fixed ratio — sea water, air, brass. The key word is "physically": mixtures can be separated without breaking any chemical bonds, whereas separating a compound requires a chemical reaction.</p>
+  <p>Why does this matter? Because it predicts behaviour. Pure substances have sharp, fixed melting and boiling points. Mixtures melt and boil over a range of temperatures. This is why a cook uses salt to depress the freezing point of an icy road, and why a metallurgist can fine-tune the melting point of an alloy by adjusting its composition.</p>
+
+  <div class="callout">
+    <p><strong>Quick test:</strong> Dissolving salt in water creates a mixture — a filter won't help, but evaporation will. Electrolysing molten NaCl to produce sodium metal and chlorine gas is a chemical change. You need a reaction to undo a compound; you need only a physical process to undo a mixture.</p>
+  </div>
+
+  <h3>The kinetic molecular theory — particles never stop</h3>
+  <p>The kinetic molecular theory (KMT) is the lens through which chemists interpret macroscopic observations like pressure, temperature, and state. Its core postulates are simple but profound: matter consists of discrete particles; those particles are in perpetual, random motion; and all collisions between particles are perfectly elastic — no kinetic energy is lost in a collision.</p>
+  <p>From this, three states of matter emerge as natural consequences rather than arbitrary facts. In a <strong>solid</strong>, particles are packed tightly in a regular lattice and vibrate in place. In a <strong>liquid</strong>, particles are close together but slide past each other — hence the ability to flow and to take the shape of a container. In a <strong>gas</strong>, particles move rapidly and independently, separated by distances that dwarf their own size. This is why gases are so compressible and why a scent diffuses across a room in seconds.</p>
+  <p>Changes of state are simply changes in the balance between kinetic energy (which tends to disperse particles) and intermolecular forces (which tend to hold them together). Heating a solid increases particle kinetic energy until it overcomes the lattice forces — the solid melts. Heating the liquid further eventually gives particles enough energy to escape into the gas phase entirely.</p>
+
+  <h3>Kinetic energy and temperature — not the same thing</h3>
+  <p>Here is a subtlety that trips up many students: <em>temperature is not the same as heat or kinetic energy.</em> Temperature is a measure of the <strong>average</strong> kinetic energy of the particles in a sample. The word "average" carries enormous weight. Any real sample contains a continuous distribution of particle speeds — some particles move slowly, some very fast, and most somewhere in between. This is the <strong>Maxwell–Boltzmann distribution</strong>, a right-skewed bell curve that you will encounter repeatedly when studying reaction rates in the Reactivity topics.</p>
+  <p>Two consequences follow immediately. First, two samples at the same temperature have the same average kinetic energy regardless of what substance they are made of — a litre of water at 25 °C and a balloon of nitrogen at 25 °C share the same average KE per particle. Second, <strong>temperature must be measured on the Kelvin scale</strong> for any proportional calculation. The Kelvin scale starts at absolute zero (0 K = −273.15 °C), the theoretical point at which particle motion ceases entirely. Plugging Celsius values into gas laws without converting will give nonsensical proportions, because 0 °C is not "no temperature" — it is just a convenient reference point for water.</p>
+
+  <div class="key-facts">
+    <div class="fact-card"><div class="fact-val">0 K</div><div class="fact-label">Absolute zero — theoretical minimum temperature</div></div>
+    <div class="fact-card"><div class="fact-val">−273.15 °C</div><div class="fact-label">0 K in Celsius</div></div>
+    <div class="fact-card"><div class="fact-val">T(K)</div><div class="fact-label">= T(°C) + 273(.15)</div></div>
+    <div class="fact-card"><div class="fact-val">KE ∝ T</div><div class="fact-label">Average KE proportional to absolute temperature</div></div>
+  </div>
+
+  <div class="callout">
+    <p><strong>Looking ahead:</strong> The Maxwell–Boltzmann distribution reappears in Reactivity 2 when you study activation energy and the effect of temperature on reaction rate. Understanding it here as a distribution of particle energies — not a single value — is the key to making sense of why reaction rates increase so sharply with temperature.</p>
+  </div>
+
+  <p>Next time: we zoom inside a single atom and trace the history of experiments that revealed its internal structure — a story that demolished intuition and gave us the nuclear model still used today.</p>
+</article>
+
+<!-- ========== BLOG 2 ========== -->
+<article class="entry" id="e1">
+  <header class="entry-header">
+    <span class="tag">Structure 1.2</span>
+    <h1 class="entry-title">Inside the atom: from plum puddings to empty space</h1>
+    <p class="entry-meta">IB DP Chemistry &middot; Blog 2 of 5 &middot; approx. 7 min read</p>
+  </header>
+
+  <div class="chips">
+    <span class="chip">The atomic model</span>
+    <span class="chip">Subatomic particles</span>
+    <span class="chip">Isotopes</span>
+    <span class="chip">Mass spectra HL</span>
+    <span class="chip">Relative atomic mass</span>
+  </div>
+
+  <p>The history of the atomic model is one of science's great detective stories. At the start of the twentieth century, chemists knew atoms existed — the laws of definite and multiple proportions demanded it — but no one had any idea what an atom looked like inside. What followed was a sequence of elegant experiments, each one overturning what the previous generation believed. The model that emerged is strange, counterintuitive, and almost certainly not what you would have predicted. That is what makes it so compelling.</p>
+
+  <h3>Thomson and the discovery of the electron</h3>
+  <p>In 1897, J.J. Thomson showed that cathode rays — streams of particles produced when electricity passes through a near-vacuum tube — were deflected by both electric and magnetic fields. This proved the particles were charged, and calculation of the charge-to-mass ratio showed they were far lighter than any known atom. Thomson had discovered the <strong>electron</strong>: a negatively charged subatomic particle present in all matter.</p>
+  <p>Since atoms are electrically neutral overall, Thomson proposed that the negative electrons must be embedded in a diffuse sphere of positive charge — the "plum-pudding" model. It was a reasonable extrapolation from what was known. It was also completely wrong.</p>
+
+  <h3>Rutherford's gold foil experiment — the nuclear model</h3>
+  <p>In 1909, Hans Geiger and Ernest Marsden, working under Rutherford, fired positively charged alpha particles at a thin sheet of gold foil, with a detector screen arranged around it to record where the particles landed. The expectation, based on Thomson's model, was that the particles would pass straight through with only minor deflection — the positive charge was supposed to be so diffuse it would barely nudge an alpha particle's path.</p>
+  <p>What they found shattered that expectation. Most alpha particles did pass straight through. But a small fraction were deflected at large angles — and some bounced almost directly backwards. Rutherford famously said this was "as if you fired a 15-inch shell at tissue paper and it came back and hit you." His conclusion was radical: almost all of an atom's mass and all of its positive charge must be concentrated in a tiny, incredibly dense region at the centre — the <strong>nucleus</strong>. The rest of the atom was, astonishingly, empty space.</p>
+
+  <div class="callout">
+    <p><strong>Scale check:</strong> If an atom were the size of a football stadium, the nucleus would be a marble at the centre. Electrons would be specks of dust somewhere in the stands. The atom is overwhelmingly empty space — which is one reason X-rays can pass through soft tissue so easily.</p>
+  </div>
+
+  <h3>The modern nuclear model</h3>
+  <p>Today's model describes the atom as: a nucleus containing <strong>protons</strong> (positive charge, mass ≈ 1 u) and <strong>neutrons</strong> (no charge, mass ≈ 1 u), surrounded by <strong>electrons</strong> (negative charge, mass ≈ 1/1836 u) in shells or orbitals at various distances from the nucleus.</p>
+  <p>The <strong>atomic number (Z)</strong> counts the number of protons in the nucleus and is the fundamental identity of an element — changing Z means changing the element entirely. The <strong>mass number (A)</strong> counts protons plus neutrons. In a neutral atom, the number of electrons equals the number of protons, ensuring overall electrical neutrality.</p>
+
+  <div class="formula-box">
+    Number of neutrons = A &minus; Z
+    <span class="formula-label">The most-used relationship in nuclear notation</span>
+  </div>
+
+  <div class="key-facts">
+    <div class="fact-card"><div class="fact-val">Z</div><div class="fact-label">Proton number — defines the element</div></div>
+    <div class="fact-card"><div class="fact-val">A</div><div class="fact-label">Mass number (p⁺ + n⁰)</div></div>
+    <div class="fact-card"><div class="fact-val">~10⁻¹⁰ m</div><div class="fact-label">Diameter of an atom</div></div>
+    <div class="fact-card"><div class="fact-val">~10⁻¹⁵ m</div><div class="fact-label">Diameter of the nucleus</div></div>
+  </div>
+
+  <h3>Isotopes — same element, different mass</h3>
+  <p>Atoms of the same element always have the same number of protons — but they can have different numbers of neutrons. These variants are called <strong>isotopes</strong>. Carbon has three naturally occurring isotopes: carbon-12 (6 protons, 6 neutrons), carbon-13 (6 protons, 7 neutrons), and carbon-14 (6 protons, 8 neutrons). All three are chemically identical — same electron configuration, same bonding behaviour, same reactions — because chemistry is determined by electrons, not neutrons. But they differ in mass, in density, and in nuclear stability (carbon-14 is radioactive and used in archaeological dating).</p>
+
+  <h3>Mass spectra and relative atomic mass (HL)</h3>
+  <p>For HL students, the mass spectrometer makes isotopes experimentally visible and measurable. A sample is vaporised, then ionised by electron bombardment to form positive ions. These ions are accelerated through an electric field to a known kinetic energy, then deflected by a magnetic field. Lighter ions (smaller m/z ratio) curve more; heavier ions curve less. The detector produces a <strong>mass spectrum</strong>: a plot of signal intensity against mass-to-charge ratio, with each peak corresponding to an isotope and its height proportional to the isotope's natural abundance.</p>
+  <p>The <strong>relative atomic mass (A<sub>r</sub>)</strong> is calculated as the weighted average of all isotopic masses:</p>
+
+  <div class="formula-box">
+    A<sub>r</sub> = &Sigma; (isotopic mass &times; fractional abundance)
+    <span class="formula-label">Weighted mean — the value on the periodic table</span>
+  </div>
+
+  <p>For chlorine — roughly 75.8% Cl-35 and 24.2% Cl-37 — this gives A<sub>r</sub> = (35 &times; 0.758) + (37 &times; 0.242) = 35.5. This is not the mass of any real chlorine atom; it is the statistical average you will use in every molar calculation.</p>
+
+  <div class="callout">
+    <p><strong>HL exam point:</strong> In a mass spectrum of a molecular compound, you will also see a molecular ion peak (M⁺) at the mass of the whole molecule, and fragment peaks from parts of the molecule that break apart in the instrument. Identifying fragments is a key data-analysis skill in HL organic chemistry.</p>
+  </div>
+
+  <p>Next time: we move from the nucleus to the surrounding electrons, ask why they can only exist at specific energies, and discover that the answer is written in the colours of light itself.</p>
+</article>
+
+<!-- ========== BLOG 3 ========== -->
+<article class="entry" id="e2">
+  <header class="entry-header">
+    <span class="tag">Structure 1.3</span>
+    <h1 class="entry-title">Electrons in colour: spectra, orbitals, and the architecture of the atom</h1>
+    <p class="entry-meta">IB DP Chemistry &middot; Blog 3 of 5 &middot; approx. 8 min read</p>
+  </header>
+
+  <div class="chips">
+    <span class="chip">Emission spectra</span>
+    <span class="chip">Energy levels</span>
+    <span class="chip">Electron configuration</span>
+    <span class="chip">Subshells and orbitals</span>
+    <span class="chip">Ionisation energies HL</span>
+  </div>
+
+  <p>Ask yourself why a neon sign glows red-orange, why a sodium street lamp casts that distinctive yellow light, why fireworks can be made to burn vivid green or crimson. The answer is not pigment or paint — it is electrons falling between energy levels inside atoms, releasing light of precise, predictable frequencies. This is the story of Structure 1.3, and it is where quantum mechanics quietly enters the IB chemistry course.</p>
+
+  <h3>Emission spectra — the atom's fingerprint</h3>
+  <p>When a gaseous element is excited — by heat, electricity, or a photon — its electrons absorb energy and jump to higher energy levels. They are unstable there and quickly fall back down, releasing the absorbed energy as photons of electromagnetic radiation. Because electrons can only occupy specific energy levels (not a continuous range), only specific photon energies — and therefore specific frequencies and colours — are emitted. The result is an <strong>emission spectrum</strong>: a series of sharp, bright lines on a dark background, unique to each element.</p>
+  <p>The spacing of the lines encodes the spacing of the energy levels. Hydrogen's visible emission lines — the Balmer series — appear at 656 nm (red), 486 nm (blue-green), and two violet lines. Every element has its own unique spectrum, which is how astronomers can identify the chemical composition of stars millions of light-years away without ever visiting them.</p>
+
+  <div class="callout">
+    <p><strong>Emission vs. absorption:</strong> An emission spectrum has bright lines on dark. An absorption spectrum — produced when white light passes through a cool gas — has dark lines at exactly the same positions on a bright background. The element absorbs the same photon energies it would emit. The solar spectrum (sunlight passed through a prism) shows hundreds of dark absorption lines that map to elements in the Sun's cooler outer atmosphere.</p>
+  </div>
+
+  <h3>Energy levels, shells, and the quantum model</h3>
+  <p>The Bohr model (1913) formalised the idea of discrete electron energy levels for hydrogen, numbering them n = 1, 2, 3, … from the nucleus outwards. Each level corresponds to a principal quantum number; energy increases and levels converge as n increases. The modern quantum mechanical model adds crucial refinements: within each principal shell (n), there are subshells (s, p, d, f) and within each subshell there are individual <strong>orbitals</strong> — regions of space where an electron has a high probability of being found.</p>
+  <p>Key orbital shapes: the <strong>s orbital</strong> is spherically symmetric (one orbital per subshell, holds 2 electrons). The <strong>p orbitals</strong> are dumbbell-shaped along the x, y, and z axes (three orbitals per subshell, holds 6 electrons). The <strong>d orbitals</strong> have more complex shapes (five orbitals per subshell, holds 10 electrons). Each orbital, regardless of shape, can hold a maximum of two electrons with opposite spins (the <strong>Pauli exclusion principle</strong>).</p>
+
+  <h3>Writing electron configurations</h3>
+  <p>Electrons fill orbitals in order of increasing energy, following three rules: the <strong>Aufbau principle</strong> (fill lowest energy first), the <strong>Pauli exclusion principle</strong> (maximum 2 electrons per orbital, opposite spins), and <strong>Hund's rule</strong> (within a subshell, fill each orbital singly before pairing). The result is a compact notation, for example:</p>
+
+  <div class="formula-box">
+    Na (Z=11): &nbsp; 1s&sup2; 2s&sup2; 2p&sup6; 3s&sup1; &nbsp; &equiv; &nbsp; [Ne] 3s&sup1;
+    <span class="formula-label">Full configuration and noble-gas shorthand for sodium</span>
+  </div>
+
+  <p>The noble-gas shorthand is useful because the inner core electrons (those matching the preceding noble gas) are chemically inert. Only the <strong>valence electrons</strong> in the outermost shell participate in bonding, and the number of valence electrons is the most important single fact about an element's chemistry.</p>
+  <p>Two famous exceptions to simple Aufbau filling are <strong>chromium</strong> (expected [Ar] 3d⁴ 4s², actual [Ar] 3d⁵ 4s¹) and <strong>copper</strong> (expected [Ar] 3d⁹ 4s², actual [Ar] 3d¹⁰ 4s¹). Both gain extra stability from a half-filled or fully filled 3d subshell respectively — worth memorising as the IB explicitly tests them.</p>
+
+  <div class="key-facts">
+    <div class="fact-card"><div class="fact-val">s</div><div class="fact-label">1 orbital &middot; max 2e⁻ &middot; spherical</div></div>
+    <div class="fact-card"><div class="fact-val">p</div><div class="fact-label">3 orbitals &middot; max 6e⁻ &middot; dumbbell</div></div>
+    <div class="fact-card"><div class="fact-val">d</div><div class="fact-label">5 orbitals &middot; max 10e⁻</div></div>
+    <div class="fact-card"><div class="fact-val">f</div><div class="fact-label">7 orbitals &middot; max 14e⁻</div></div>
+  </div>
+
+  <h3>Ionisation energies as evidence for shell structure (HL)</h3>
+  <p>The <strong>first ionisation energy (IE₁)</strong> is the minimum energy needed to remove one mole of electrons from one mole of gaseous atoms in their ground state. It measures how tightly the outermost electron is held. Across a period, IE₁ generally increases because nuclear charge grows while shielding stays roughly constant — each additional proton pulls the outer electrons in more tightly. Down a group, IE₁ falls because the outer electrons are in successively higher (and more shielded) shells, farther from the nucleus.</p>
+  <p>For HL, the pattern of <strong>successive ionisation energies</strong> is even more revealing. The second ionisation energy removes the second electron from the resulting +1 ion, the third removes the third, and so on. Each successive IE is larger than the last — removing from an increasingly positive ion is harder. But the jumps are not smooth: when you start pulling electrons out of an inner shell, there is a sudden, dramatic increase. This is experimental proof of shell structure. A graph of successive IEs for aluminium shows a large jump after IE₃ (three electrons in the outer shell) and a further larger jump after IE₁₁ (the transition from the L to the K shell). The numbers tell you the group.</p>
+
+  <div class="callout">
+    <p><strong>Exam shortcut:</strong> If you are given successive IE data and asked to identify the element's group, find the first dramatic jump — the element has that many electrons in its outermost shell. A big jump between IE₂ and IE₃ means two outer electrons: Group 2.</p>
+  </div>
+
+  <p>Next time: we step back from individual atoms and ask the most practical question in analytical chemistry — how do you count 6 &times; 10²³ particles without actually counting them? The answer is the mole.</p>
+</article>
+
+<!-- ========== BLOG 4 ========== -->
+<article class="entry" id="e3">
+  <header class="entry-header">
+    <span class="tag">Structure 1.4</span>
+    <h1 class="entry-title">Counting the uncountable: the mole, mass, and concentration</h1>
+    <p class="entry-meta">IB DP Chemistry &middot; Blog 4 of 5 &middot; approx. 8 min read</p>
+  </header>
+
+  <div class="chips">
+    <span class="chip">The mole concept</span>
+    <span class="chip">Relative atomic &amp; formula mass</span>
+    <span class="chip">Molar mass</span>
+    <span class="chip">Empirical &amp; molecular formulas</span>
+    <span class="chip">Molar concentration</span>
+    <span class="chip">Avogadro's Law</span>
+  </div>
+
+  <p>Chemistry is a science of transformation — atoms rearranging into new compounds, releasing or absorbing energy as they do so. But to write a quantitative equation for any reaction, you need to count the particles involved. The problem is that atoms are staggeringly small. A single copper atom has a diameter of about 2.5 &times; 10⁻¹⁰ m and a mass of about 1.06 &times; 10⁻²² grams. You cannot weigh out a single atom in a school laboratory. You cannot even weigh a billion of them. The mole solves this problem with elegant simplicity.</p>
+
+  <h3>What is a mole?</h3>
+  <p>A <strong>mole</strong> is simply a number — a very large number. Specifically, one mole of any substance contains exactly <strong>6.02214076 &times; 10²³</strong> elementary entities (atoms, molecules, ions, electrons — whatever you specify). This is <strong>Avogadro's constant (N<sub>A</sub>)</strong>, chosen so that one mole of carbon-12 atoms has a mass of exactly 12 grams. The beauty of this definition is that it links the atomic mass scale (where C-12 = 12 u by definition) to the macroscopic world of grams and balances.</p>
+  <p>To put the size of N<sub>A</sub> in perspective: if you counted one mole of rice grains, they would cover the entire land surface of Earth to a depth of about 75 metres. Atoms are very small, and we use very many of them.</p>
+
+  <div class="callout">
+    <p><strong>Why 6.022 &times; 10²³ specifically?</strong> The number was chosen so that the numerical value of an element's molar mass in g mol⁻¹ equals its relative atomic mass. Carbon-12 has a relative atomic mass of exactly 12, so one mole of C-12 weighs exactly 12 g. This makes converting between atomic mass units and grams trivially easy.</p>
+  </div>
+
+  <h3>Molar mass and the central calculation</h3>
+  <p>The <strong>molar mass (M)</strong> of a substance is the mass of one mole of that substance, in units of g mol⁻¹. For elements, it equals the relative atomic mass numerically. For compounds, add up the relative atomic masses of all atoms in the formula. For water (H₂O): M = 2(1.01) + 16.00 = 18.02 g mol⁻¹. For sodium chloride (NaCl): M = 22.99 + 35.45 = 58.44 g mol⁻¹.</p>
+  <p>This gives you the most important relationship in quantitative chemistry:</p>
+
+  <div class="formula-box">
+    n = m / M
+    <span class="formula-label">n = moles (mol) &middot; m = mass (g) &middot; M = molar mass (g mol⁻¹)</span>
+  </div>
+
+  <p>Master this triangle. If you know any two of the three quantities, you can find the third. From moles you can find the number of particles (multiply by N<sub>A</sub>), or the volume of a gas at known conditions (multiply by the molar volume), or the volume of a solution at known concentration. The mole is the hub through which all quantitative chemistry passes.</p>
+
+  <h3>Empirical and molecular formulas</h3>
+  <p>The <strong>empirical formula</strong> gives the simplest whole-number ratio of atoms in a compound. The <strong>molecular formula</strong> gives the actual number of each type of atom per molecule. Glucose (C₆H₁₂O₆) has the empirical formula CH₂O — the simplest ratio 1:2:1. Benzene (C₆H₆) has the empirical formula CH. To convert from empirical to molecular formula, divide the known molar mass of the compound by the molar mass of one empirical unit, then multiply all subscripts by that factor.</p>
+  <p>Finding empirical formulas experimentally: the classic route is <strong>combustion analysis</strong>. Burn a known mass of an organic compound completely in excess oxygen. Collect and weigh the CO₂ and H₂O produced. The mass of carbon in the sample equals (12/44) &times; mass of CO₂; the mass of hydrogen equals (2/18) &times; mass of H₂O. If the compound contains oxygen, its mass is found by difference. Convert masses to moles, then find the simplest whole-number ratio.</p>
+
+  <div class="key-facts">
+    <div class="fact-card"><div class="fact-val">6.022×10²³</div><div class="fact-label">N<sub>A</sub> — entities per mole</div></div>
+    <div class="fact-card"><div class="fact-val">n = m/M</div><div class="fact-label">The mole triangle</div></div>
+    <div class="fact-card"><div class="fact-val">g mol⁻¹</div><div class="fact-label">Units of molar mass</div></div>
+    <div class="fact-card"><div class="fact-val">22.7 dm³</div><div class="fact-label">Molar volume at STP (IB)</div></div>
+  </div>
+
+  <h3>Molar concentration</h3>
+  <p>For solutions, the amount of solute is expressed as <strong>molar concentration (c)</strong>: the number of moles of solute per cubic decimetre (litre) of solution, in units of mol dm⁻³. The relationship is c = n/V, rearranged as n = cV. Preparing a standard solution requires dissolving a precisely weighed mass of solute in a volumetric flask and making up to exactly the required volume — not simply adding a certain volume of solvent.</p>
+  <p>Dilution follows directly: if you take a volume V₁ of concentration c₁ and dilute it to volume V₂, the amount of solute is conserved: <strong>c₁V₁ = c₂V₂</strong>. This is useful whenever you need to prepare a working solution from a more concentrated stock.</p>
+
+  <div class="formula-box">
+    c = n / V &nbsp;&nbsp;&nbsp; c&#x2081;V&#x2081; = c&#x2082;V&#x2082;
+    <span class="formula-label">Concentration and dilution &middot; V in dm³ (litres)</span>
+  </div>
+
+  <h3>Avogadro's Law and molar volume of gases</h3>
+  <p><strong>Avogadro's Law</strong> states that equal volumes of all ideal gases, measured at the same temperature and pressure, contain equal numbers of molecules. It follows that one mole of any ideal gas occupies the same volume under the same conditions. The IB defines <strong>standard temperature and pressure (STP)</strong> as 0 °C (273.15 K) and 100 kPa, at which the molar volume is <strong>22.7 dm³ mol⁻¹</strong>. This lets you convert between moles of gas and volumes without weighing — invaluable for reactions that produce or consume gases.</p>
+
+  <div class="callout">
+    <p><strong>IB vs. other curricula:</strong> The IB uses 22.7 dm³ mol⁻¹ at STP (0 °C, 100 kPa). Older textbooks and some other curricula use 22.4 dm³ mol⁻¹ at the older STP definition (0 °C, 101.325 kPa). Always use 22.7 in IB examinations.</p>
+  </div>
+
+  <p>Next time: we take gases as the subject in their own right, build a model from first principles, derive the equation that unifies all their behaviour, and examine where that model inevitably breaks down against reality.</p>
+</article>
+
+<!-- ========== BLOG 5 ========== -->
+<article class="entry" id="e4">
+  <header class="entry-header">
+    <span class="tag">Structure 1.5</span>
+    <h1 class="entry-title">The ideal gas: a beautiful lie that mostly tells the truth</h1>
+    <p class="entry-meta">IB DP Chemistry &middot; Blog 5 of 5 &middot; approx. 7 min read</p>
+  </header>
+
+  <div class="chips">
+    <span class="chip">The ideal gas model</span>
+    <span class="chip">Boyle's Law</span>
+    <span class="chip">Charles' Law</span>
+    <span class="chip">Gay-Lussac's Law</span>
+    <span class="chip">The ideal gas equation</span>
+    <span class="chip">Real gases</span>
+  </div>
+
+  <p>Scientists love a well-chosen simplifying assumption. A frictionless surface. A point mass. A perfectly spherical cow. These fictions are not meant to describe reality exactly — they are meant to reveal the underlying mathematics as cleanly as possible, to be corrected later once the structure is understood. The <strong>ideal gas</strong> is one of the most powerful such simplifications in all of science. It is a model that ignores two things that are genuinely true, and in doing so unlocks a single, elegant equation that describes the behaviour of real gases surprisingly well under most everyday conditions.</p>
+
+  <h3>The two defining assumptions</h3>
+  <p><strong>Assumption 1: The volume of gas particles is negligible</strong> compared to the total volume of the container. Gas molecules are treated as mathematical points — they have mass but occupy no space. This is not literally true (molecules do have size), but it is a very good approximation when the gas is sparse: under normal conditions, the molecules themselves occupy less than 0.1% of the total volume.</p>
+  <p><strong>Assumption 2: There are no intermolecular forces between particles</strong> except during instantaneous elastic collisions. Particles do not attract or repel each other as they travel between collisions. In reality, all molecules have some intermolecular forces — but at low pressures and high temperatures, where molecules are far apart and moving fast, these forces are negligible.</p>
+  <p>Under these conditions, the behaviour of the gas depends only on how many particles there are and what kinetic energy they carry — not on what the particles are made of. This is why one mole of helium, one mole of carbon dioxide, and one mole of steam all occupy the same volume at the same temperature and pressure (when behaving ideally).</p>
+
+  <h3>The gas laws — one relationship, four variables</h3>
+  <p><strong>Boyle's Law</strong> (1662): at constant temperature and amount, pressure and volume are inversely proportional. Double the pressure, halve the volume. Explanation from KMT: the same number of particles now collides with a smaller surface area more frequently, generating greater pressure. P₁V₁ = P₂V₂.</p>
+  <p><strong>Charles' Law</strong>: at constant pressure and amount, volume is directly proportional to absolute temperature. Heat a gas and its particles move faster; to maintain constant pressure (same collision frequency per unit area), the container must expand. V₁/T₁ = V₂/T₂, with T in kelvin.</p>
+  <p><strong>Gay-Lussac's Law</strong>: at constant volume and amount, pressure is directly proportional to absolute temperature. Heat a gas in a sealed container and its particles collide with the walls harder and more often — pressure rises. P₁/T₁ = P₂/T₂.</p>
+  <p>All three, plus Avogadro's Law (volume proportional to amount at constant T and P), are unified in the <strong>ideal gas equation</strong>:</p>
+
+  <div class="formula-box">
+    PV = nRT
+    <span class="formula-label">P in Pa &middot; V in m³ &middot; n in mol &middot; T in K &middot; R = 8.314 J K⁻¹ mol⁻¹</span>
+  </div>
+
+  <p>R is the <strong>universal gas constant</strong>. Every other gas law is a special case of this equation obtained by holding two variables constant. If you know any four of the five quantities {P, V, n, R, T}, you can find the fifth.</p>
+
+  <div class="callout">
+    <p><strong>Critical units check:</strong> The IB form of the equation requires SI units throughout — pressure in pascals (Pa, not kPa), volume in cubic metres (m³, not dm³ or cm³), temperature in kelvin (K, not °C). Conversions: 1 kPa = 1000 Pa; 1 dm³ = 0.001 m³; T(K) = T(°C) + 273. Mixing units is the single most common source of errors in gas law calculations.</p>
+  </div>
+
+  <h3>A worked example with a sense-check</h3>
+  <p>What is the volume occupied by 0.250 mol of an ideal gas at 27 °C and 150 kPa? Converting: T = 300 K, P = 150,000 Pa. Then V = nRT/P = (0.250 × 8.314 × 300) / 150,000 = 623.55 / 150,000 = 0.004157 m³ = 4.16 dm³.</p>
+  <p>Sense-check: at STP, 0.250 mol would occupy 0.250 × 22.7 = 5.68 dm³. Our conditions are warmer (300 K vs 273 K, should expand slightly) but at higher pressure (150 kPa vs 100 kPa, compresses significantly). Net effect: smaller volume. 4.16 dm³ is less than 5.68 dm³. ✓</p>
+
+  <h3>Real gases — where the model breaks down</h3>
+  <p>Real gases deviate from ideal behaviour most significantly under two conditions: <strong>high pressure</strong> and <strong>low temperature</strong>. These are precisely the conditions under which the two idealising assumptions fail.</p>
+  <p>At <strong>high pressure</strong>, molecules are forced into close proximity and the assumption that particle volume is negligible breaks down. The actual free volume available for the gas to occupy is less than V — the molecules themselves take up space. This causes the real gas to be less compressible than predicted: the measured volume is larger than PV = nRT would suggest.</p>
+  <p>At <strong>low temperature</strong>, molecules slow down and intermolecular attractions (which are always present — van der Waals forces at minimum) become significant relative to the kinetic energy. Particles approaching the wall are pulled back slightly by their neighbours, reducing the force of wall collisions and lowering the pressure below the ideal value.</p>
+
+  <div class="key-facts">
+    <div class="fact-card"><div class="fact-val">High P</div><div class="fact-label">Particle volume matters → V larger than ideal</div></div>
+    <div class="fact-card"><div class="fact-val">Low T</div><div class="fact-label">IMFs significant → P lower than ideal</div></div>
+    <div class="fact-card"><div class="fact-val">He, H₂, N₂</div><div class="fact-label">Most ideal — weak IMFs, small size</div></div>
+    <div class="fact-card"><div class="fact-val">NH₃, CO₂, SO₂</div><div class="fact-label">Most deviant — strong IMFs, larger molecules</div></div>
+  </div>
+
+  <p>The van der Waals equation corrects for both effects by adding a pressure-correction term (a/V²) for intermolecular attractions and a volume-correction term (b) for finite particle size — but this lies beyond the standard IB course.</p>
+
+  <h3>Pulling all five posts together</h3>
+  <p>Across this series, a single coherent story has emerged from Structure 1. Matter is made of particles in constant motion (1.1). Those particles have internal structure — a nucleus of protons and neutrons, surrounded by electrons in quantised energy levels (1.2, 1.3). We can count those particles by weighing them, using the mole as the bridge between atomic and macroscopic scales (1.4). And when those particles are in the gas phase, their collective pressure-volume-temperature-amount behaviour is captured, to excellent approximation, by PV = nRT (1.5).</p>
+  <p>None of these ideas stands alone. The kinetic molecular theory underpins the gas laws, the Maxwell–Boltzmann distribution in kinetics, and the concept of entropy in thermodynamics. The mole appears in every stoichiometry calculation from here to the end of the course. Electron configuration determines periodic trends, bonding, and reactivity. Structure 1 is not an isolated chapter to memorise and move on from — it is the conceptual foundation on which every subsequent topic is built.</p>
+
+  <div class="callout">
+    <p><strong>Looking ahead:</strong> Structure 2 asks how atoms bond together — ionic, covalent, and metallic — and how the type and geometry of bonding controls every property of every material from table salt to diamond to conducting polymers. Your electron configurations from 1.3 are the starting point for all of it.</p>
+  </div>
+</article>
+
+<script>
+function show(i){
+  document.querySelectorAll('.entry').forEach((e,idx)=>{
+    e.classList.toggle('visible',idx===i);
+  });
+  document.querySelectorAll('.nav-btn').forEach((b,idx)=>{
+    b.classList.toggle('active',idx===i);
+  });
+  document.getElementById('prog-label').textContent='Entry '+(i+1)+' of 5';
+  document.getElementById('prog-fill').style.width=((i+1)/5*100)+'%';
+}
+</script>
+</body>
+</html>
